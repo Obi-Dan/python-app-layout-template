@@ -3,6 +3,7 @@ help :
 	@echo 'Commands:'
 	@echo '  install                    Install dependencies'
 	@echo
+	@echo '  run                        Run the app'
 	@echo '  test                       Run unit tests'
 .PHONY : help
 
@@ -14,10 +15,9 @@ install :
 .PHONY : install
 
 run :
-	python ./app/runner.py
+	python ./src/runner.py
 .PHONY : run
 
-clean-run :
-	$(MAKE) install
-	$(MAKE) run
-.PHONY : clean-run
+test :
+	python -m pytest
+.PHONY : test
